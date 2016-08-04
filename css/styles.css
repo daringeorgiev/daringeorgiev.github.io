@@ -5967,6 +5967,22 @@ section {
   /* Safari */
   transition: background 2s; }
 
+ul li.active:after {
+  border-bottom: 0.5rem solid #2780E3;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+ul li:hover:after {
+  border-bottom: 0.5rem solid #165ba8;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
 .affix {
   top: 0;
   width: 100%;

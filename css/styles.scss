@@ -16,6 +16,20 @@ section {
     /* Safari */
     transition: background 2s;
 }
+@mixin active-style ($color) {
+    border-bottom: 0.5rem solid $color;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+ul li.active:after{
+    @include active-style($brand-primary);
+}
+ul li:hover:after{
+    @include active-style($link-hover-color);
+}
 .affix {
     top: 0;
     width: 100%;
