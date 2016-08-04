@@ -42,6 +42,9 @@ ul li:hover:after{
     position: relative;
     top: px;
 }
+h1 i {
+    color: $link-hover-color;
+}
 .skills__img {
     height: 2em;
     margin-right: 0.5em;

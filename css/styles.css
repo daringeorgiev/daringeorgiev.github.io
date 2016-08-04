@@ -5995,6 +5995,9 @@ ul li:hover:after {
   position: relative;
   top: px; }
 
+h1 i {
+  color: #165ba8; }
+
 .skills__img {
   height: 2em;
   margin-right: 0.5em; }
