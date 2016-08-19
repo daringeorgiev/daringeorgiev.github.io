@@ -54,6 +54,12 @@ h1 i {
   color: $link-hover-color;
 }
 
+.projects__description {
+  border-left: .5rem solid $brand-primary;
+  margin-bottom: 40px;
+  padding-left: 2rem;
+}
+
 .skills__img {
   height: 2em;
   margin-right: .5em;
