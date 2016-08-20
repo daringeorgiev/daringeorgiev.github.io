@@ -2,6 +2,7 @@
 $icon-font-path: '../libs/bootstrap/fonts/';
 @import '../libs/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'bootswatchCosmo';
+@import 'bounce';
 
 body {
   position: relative;
@@ -18,6 +19,10 @@ section {
   -webkit-transition: background 2s;
   transition: background 2s;
   z-index: 9999;
+}
+
+.navbar-brand:hover {
+  animation: bounce 1s both;
 }
 
 @mixin active-style ($color) {
