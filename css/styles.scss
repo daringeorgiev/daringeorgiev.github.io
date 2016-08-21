@@ -22,7 +22,8 @@ section {
 }
 
 .navbar-brand:hover {
-  animation: bounce 1s both;
+  -webkit-animation: bounce 1s both;
+          animation: bounce 1s both;
 }
 
 @mixin active-style ($color) {
