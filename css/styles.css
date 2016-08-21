@@ -6058,16 +6058,10 @@ h1 i {
   padding: 3rem; }
 
 .go-top {
-  background-color: rgba(35, 68, 101, 0.5);
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  bottom: 30px;
-  color: #010101;
+  color: rgba(35, 68, 101, 0.5);
+  bottom: 2rem;
   display: none;
-  padding: 14px 16px;
   position: fixed;
-  right: 50px;
-  text-decoration: none; }
+  right: 2rem; }
 
 /*# sourceMappingURL=styles.css.map */
