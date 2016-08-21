@@ -44,6 +44,13 @@
                 scrollTop: 0
             }, 800);
         })
+
+        // Close collapsed menu on click
+        $(document).on('click', '.navbar-collapse.in', function(e) {
+            if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+                $(this).collapse('hide');
+            }
+        });
     });
 
     // Updating address bar on scroll
