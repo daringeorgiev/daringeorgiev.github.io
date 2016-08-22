@@ -1,7 +1,7 @@
 @-webkit-keyframes snowboarding {
   0% {
     bottom: 35px;
-    left: 0;
+    left: 5px;
     -webkit-transform: rotate(5deg);
             transform: rotate(5deg);
   }
@@ -32,13 +32,13 @@
 
   100% {
     bottom: 0;
-    left: 90%;
+    left: calc(100% - 80px);
   }
 }
 @keyframes snowboarding {
   0% {
     bottom: 35px;
-    left: 0;
+    left: 5px;
     -webkit-transform: rotate(5deg);
             transform: rotate(5deg);
   }
@@ -69,6 +69,6 @@
 
   100% {
     bottom: 0;
-    left: 90%;
+    left: calc(100% - 80px);
   }
 }

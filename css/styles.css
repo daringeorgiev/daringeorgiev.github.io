@@ -6004,33 +6004,33 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 @-webkit-keyframes football {
   0% {
     bottom: 0;
-    left: 0;
+    left: 5px;
     -webkit-transform: scale(1);
     transform: scale(1); }
   55% {
-    bottom: 70%; }
+    bottom: calc(100% - 70px); }
   100% {
-    bottom: 35%;
-    left: 90%;
+    bottom: 30%;
+    left: calc(100% - 80px);
     -webkit-transform: scale(0.3);
     transform: scale(0.3); } }
 @keyframes football {
   0% {
     bottom: 0;
-    left: 0;
+    left: 5px;
     -webkit-transform: scale(1);
     transform: scale(1); }
   55% {
-    bottom: 70%; }
+    bottom: calc(100% - 70px); }
   100% {
-    bottom: 35%;
-    left: 90%;
+    bottom: 30%;
+    left: calc(100% - 80px);
     -webkit-transform: scale(0.3);
     transform: scale(0.3); } }
 @-webkit-keyframes snowboarding {
   0% {
     bottom: 35px;
-    left: 0;
+    left: 5px;
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg); }
   25% {
@@ -6051,11 +6051,11 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     transform: rotate(0deg); }
   100% {
     bottom: 0;
-    left: 90%; } }
+    left: calc(100% - 80px); } }
 @keyframes snowboarding {
   0% {
     bottom: 35px;
-    left: 0;
+    left: 5px;
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg); }
   25% {
@@ -6076,37 +6076,41 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     transform: rotate(0deg); }
   100% {
     bottom: 0;
-    left: 90%; } }
+    left: calc(100% - 80px); } }
 @-webkit-keyframes formulaOne {
   0% {
-    left: 100px; }
+    left: 15px;
+    top: 10px; }
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   50% {
-    left: 80%;
+    left: calc(100% - 90px);
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   90% {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   100% {
-    left: 100px; } }
+    left: 15px;
+    top: 10px; } }
 @keyframes formulaOne {
   0% {
-    left: 100px; }
+    left: 15px;
+    top: 10px; }
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   50% {
-    left: 80%;
+    left: calc(100% - 90px);
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   90% {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   100% {
-    left: 100px; } }
+    left: 15px;
+    top: 10px; } }
 body {
   position: relative; }
 
