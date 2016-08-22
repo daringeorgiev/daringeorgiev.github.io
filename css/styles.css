@@ -6117,6 +6117,15 @@ body {
 section {
   padding-top: 50px; }
 
+main p a {
+  border-bottom: 1px solid #2780E3;
+  color: #333333; }
+  main p a:hover {
+    background-color: #dceafa;
+    border-color: #165ba8;
+    border-radius: 3px;
+    text-decoration: none; }
+
 .navbar {
   background: rgba(4, 6, 6, 0.3);
   font-weight: 400;
