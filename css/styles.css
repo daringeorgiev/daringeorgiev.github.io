@@ -6001,6 +6001,112 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   90% {
     -webkit-transform: translate3d(0, -4px, 0);
     transform: translate3d(0, -4px, 0); } }
+@-webkit-keyframes football {
+  0% {
+    bottom: 0;
+    left: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  55% {
+    bottom: 70%; }
+  100% {
+    bottom: 35%;
+    left: 90%;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3); } }
+@keyframes football {
+  0% {
+    bottom: 0;
+    left: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  55% {
+    bottom: 70%; }
+  100% {
+    bottom: 35%;
+    left: 90%;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3); } }
+@-webkit-keyframes snowboarding {
+  0% {
+    bottom: 35px;
+    left: 0;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg); }
+  25% {
+    bottom: 25px;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg); }
+  35% {
+    bottom: 50px;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  45% {
+    bottom: 20px;
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  60% {
+    bottom: 5px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    bottom: 0;
+    left: 90%; } }
+@keyframes snowboarding {
+  0% {
+    bottom: 35px;
+    left: 0;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg); }
+  25% {
+    bottom: 25px;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg); }
+  35% {
+    bottom: 50px;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  45% {
+    bottom: 20px;
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  60% {
+    bottom: 5px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    bottom: 0;
+    left: 90%; } }
+@-webkit-keyframes formulaOne {
+  0% {
+    left: 100px; }
+  40% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  50% {
+    left: 80%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  90% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    left: 100px; } }
+@keyframes formulaOne {
+  0% {
+    left: 100px; }
+  40% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  50% {
+    left: 80%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  90% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    left: 100px; } }
 body {
   position: relative; }
 
@@ -6088,5 +6194,25 @@ h1 i {
   display: none;
   position: fixed;
   right: 2rem; }
+
+.sports-img-wrapper {
+  height: 150px;
+  position: relative;
+  width: 100%; }
+
+.football-img {
+  animation: football 5s both;
+  animation-iteration-count: infinite;
+  position: absolute; }
+
+.snowboarding-img {
+  animation: snowboarding 7s both;
+  animation-iteration-count: infinite;
+  position: absolute; }
+
+.formula-img {
+  animation: formulaOne 8s both;
+  animation-iteration-count: infinite;
+  position: absolute; }
 
 /*# sourceMappingURL=styles.css.map */

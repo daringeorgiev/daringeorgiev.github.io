@@ -3,6 +3,9 @@ $icon-font-path: '../fonts/';
 @import '../libs/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'bootswatchCosmo';
 @import 'bounce';
+@import 'football';
+@import 'snowboarding';
+@import 'formulaOne';
 
 body {
   position: relative;
@@ -110,4 +113,29 @@ h1 i {
   display: none;
   position: fixed;
   right: 2rem;
+}
+
+// Sports animations
+.sports-img-wrapper {
+  height: 150px;
+  position: relative;
+  width: 100%;
+}
+
+.football-img {
+  animation: football 5s both;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.snowboarding-img {
+  animation: snowboarding 7s both;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.formula-img {
+  animation: formulaOne 8s both;
+  animation-iteration-count: infinite;
+  position: absolute;
 }

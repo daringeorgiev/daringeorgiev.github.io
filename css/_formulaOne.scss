@@ -1,0 +1,50 @@
+@-webkit-keyframes formulaOne {
+  0% {
+    left: 100px;
+  }
+
+  40% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  50% {
+    left: 80%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    left: 100px;
+  }
+}
+@keyframes formulaOne {
+  0% {
+    left: 100px;
+  }
+
+  40% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  50% {
+    left: 80%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    left: 100px;
+  }
+}
