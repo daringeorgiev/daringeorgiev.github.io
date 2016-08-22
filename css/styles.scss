@@ -25,6 +25,10 @@ main p a {
     border-radius: 3px;
     text-decoration: none;
   }
+
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 .navbar {

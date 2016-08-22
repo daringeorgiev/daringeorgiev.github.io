@@ -6125,6 +6125,8 @@ main p a {
     border-color: #165ba8;
     border-radius: 3px;
     text-decoration: none; }
+  main p a:focus {
+    text-decoration: none; }
 
 .navbar {
   background: rgba(4, 6, 6, 0.3);
