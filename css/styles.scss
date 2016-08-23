@@ -138,20 +138,19 @@ h1 i {
   width: 100%;
 }
 
-.football-img {
-  animation: football 5s both;
-  animation-iteration-count: infinite;
+@mixin sport-animation ($style, $duration) {
+  animation: $style $duration infinite;
   position: absolute;
+}
+
+.football-img {
+  @include sport-animation(football, 5s);
 }
 
 .snowboarding-img {
-  animation: snowboarding 7s both;
-  animation-iteration-count: infinite;
-  position: absolute;
+  @include sport-animation(snowboarding, 7s);
 }
 
 .formula-img {
-  animation: formulaOne 8s both;
-  animation-iteration-count: infinite;
-  position: absolute;
+  @include sport-animation(formulaOne, 8s);
 }

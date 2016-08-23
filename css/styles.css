@@ -6216,18 +6216,15 @@ h1 i {
   width: 100%; }
 
 .football-img {
-  animation: football 5s both;
-  animation-iteration-count: infinite;
+  animation: football 5s infinite;
   position: absolute; }
 
 .snowboarding-img {
-  animation: snowboarding 7s both;
-  animation-iteration-count: infinite;
+  animation: snowboarding 7s infinite;
   position: absolute; }
 
 .formula-img {
-  animation: formulaOne 8s both;
-  animation-iteration-count: infinite;
+  animation: formulaOne 8s infinite;
   position: absolute; }
 
 /*# sourceMappingURL=styles.css.map */
