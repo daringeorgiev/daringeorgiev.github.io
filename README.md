@@ -2,14 +2,14 @@
 
 ###### This is my personal page
 
-[LINK](https://rawgit.com/darinnn/Personal-Page/master/index.html)
+[LINK](https://daringeorgiev.github.io)
 
 ### Local Installation
 ```
-git clone https://github.com/darinnn/Personal-Page 
-cd Personal-Page/ 
+git clone https://github.com/darinnn/Personal-Page
+cd Personal-Page/
 bower install
 ```
 
 #### Powered by:
-[Twitter Bootstrap](http://getbootstrap.com/), [Font Awesome](http://fontawesome.io/) and [SASS](http://sass-lang.com/) 
+[Twitter Bootstrap](http://getbootstrap.com/), [Font Awesome](http://fontawesome.io/) and [SASS](http://sass-lang.com/)
