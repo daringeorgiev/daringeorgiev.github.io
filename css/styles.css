@@ -6119,7 +6119,9 @@ section {
 
 main p a {
   border-bottom: 1px solid #2780E3;
-  color: #333333; }
+  color: #333333;
+  -webkit-transition: background 1s;
+  transition: background 1s; }
   main p a:hover {
     background-color: #dceafa;
     border-color: #165ba8;

@@ -18,6 +18,8 @@ section {
 main p a {
   border-bottom: 1px solid $link-color;
   color: $gray-dark;
+  -webkit-transition: background 1s;
+  transition: background 1s;
 
   &:hover {
     background-color: lighten($link-color, 40%);
