@@ -53,7 +53,14 @@
         });
     });
 
-    // Updating address bar on scroll
+    // Update address bar, when scroll to top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() === 0) {
+            window.location.hash = ''
+        }
+    });
+
+    // Update address bar on scroll
     $(window).on('activate.bs.scrollspy', function(e) {
         history.replaceState({}, "", $("a[href^='#']", e.target).attr("href"));
     });
