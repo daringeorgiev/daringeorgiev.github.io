@@ -62,6 +62,10 @@
 
     // Update address bar on scroll
     $(window).on('activate.bs.scrollspy', function(e) {
-        history.replaceState({}, "", $("a[href^='#']", e.target).attr("href"));
+      // This check prevent undefined from IE url
+      // TODO: Find a better way of doing that
+      if ($("a[href^='#']", e.target).attr("href")) {
+          history.replaceState({}, "", $("a[href^='#']", e.target).attr("href"));
+      }
     });
 })(window, document);
