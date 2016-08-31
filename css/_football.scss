@@ -1,27 +1,7 @@
-@-webkit-keyframes football {
-  0% {
-    bottom: 0;
-    left: 5px;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  55% {
-    bottom: calc(100% - 70px);
-  }
-
-  100% {
-    bottom: 30%;
-    left: calc(100% - 80px);
-    -webkit-transform: scale(.3);
-    transform: scale(.3);
-  }
-}
 @keyframes football {
   0% {
     bottom: 0;
     left: 5px;
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 
@@ -32,7 +12,6 @@
   100% {
     bottom: 30%;
     left: calc(100% - 80px);
-    -webkit-transform: scale(.3);
     transform: scale(.3);
   }
 }
