@@ -6,7 +6,7 @@
 
 ### Local Installation
 ```
-git clone https://github.com/darinnn/Personal-Page
+git clone https://github.com/daringeorgiev/daringeorgiev.github.io.git
 cd Personal-Page/
 bower install
 ```
