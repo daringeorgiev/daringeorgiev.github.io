@@ -3,14 +3,14 @@
     $(document).ready(function() {
         // Add scrollspy to <body>
         $('body').scrollspy({
-            target: ".navbar",
+            target: '.navbar',
             offset: 50
         });
 
         // Add smooth scrolling on all links inside the navbar
-        $("#navbar a").on('click', function(event) {
+        $('#navbar a').on('click', function(event) {
             // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
+            if (this.hash !== '') {
                 // Prevent default anchor click behavior
                 event.preventDefault();
 
@@ -43,7 +43,7 @@
             $('html, body').animate({
                 scrollTop: 0
             }, 800);
-        })
+        });
 
         // Close collapsed menu on click
         $(document).on('click', '.navbar-collapse.in', function(e) {
@@ -56,16 +56,16 @@
     // Update address bar, when scroll to top
     $(window).scroll(function() {
         if ($(this).scrollTop() === 0) {
-            window.location.hash = ''
+            window.location.hash = '';
         }
     });
 
     // Update address bar on scroll
     $(window).on('activate.bs.scrollspy', function(e) {
-      // This check prevent undefined from IE url
-      // TODO: Find a better way of doing that
-      if ($("a[href^='#']", e.target).attr("href")) {
-          history.replaceState({}, "", $("a[href^='#']", e.target).attr("href"));
-      }
+        // This check prevent undefined from IE url
+        // TODO: Find a better way of doing that
+        if ($('a[href^="#"]', e.target).attr('href')) {
+            history.replaceState({}, '', $('a[href^="#"]', e.target).attr('href'));
+        }
     });
 })(window, document);
