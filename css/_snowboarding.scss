@@ -27,6 +27,7 @@
 
   100% {
     bottom: 0;
-    left: calc(100% - 80px);
+    // Do not use calc(100% - 80px), because IE has a problem with it
+    left: 70%;
   }
 }

@@ -9,7 +9,8 @@
   }
 
   50% {
-    left: calc(100% - 90px);
+    // Do not use calc(100% - 90px), because IE has a problem with it
+    left: 70%;
     transform: rotate(180deg);
   }
 

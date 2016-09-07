@@ -5960,10 +5960,10 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     -webkit-transform: scale(1);
             transform: scale(1); }
   55% {
-    bottom: calc(100% - 70px); }
+    bottom: 70%; }
   100% {
     bottom: 30%;
-    left: calc(100% - 80px);
+    left: 75%;
     -webkit-transform: scale(0.3);
             transform: scale(0.3); } }
 @keyframes football {
@@ -5973,10 +5973,10 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     -webkit-transform: scale(1);
             transform: scale(1); }
   55% {
-    bottom: calc(100% - 70px); }
+    bottom: 70%; }
   100% {
     bottom: 30%;
-    left: calc(100% - 80px);
+    left: 75%;
     -webkit-transform: scale(0.3);
             transform: scale(0.3); } }
 @-webkit-keyframes snowboarding {
@@ -6003,7 +6003,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
             transform: rotate(0deg); }
   100% {
     bottom: 0;
-    left: calc(100% - 80px); } }
+    left: 70%; } }
 @keyframes snowboarding {
   0% {
     bottom: 35px;
@@ -6028,7 +6028,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
             transform: rotate(0deg); }
   100% {
     bottom: 0;
-    left: calc(100% - 80px); } }
+    left: 70%; } }
 @-webkit-keyframes formulaOne {
   0% {
     left: 15px;
@@ -6037,7 +6037,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
   50% {
-    left: calc(100% - 90px);
+    left: 70%;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
   90% {
@@ -6054,7 +6054,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
   50% {
-    left: calc(100% - 90px);
+    left: 70%;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
   90% {
