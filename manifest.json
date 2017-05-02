@@ -1,0 +1,11 @@
+{
+  "name": "Darin Georgiev",
+  "short_name": "D. Georgiev",
+  "description": "Darin Georgiev Personal Page",
+  "lang": "en-US",
+  "start_url": ".",
+  "display": "browser",
+  "background_color": "#fff",
+  "theme_color": "#2780E3",
+  "icons": []
+}
