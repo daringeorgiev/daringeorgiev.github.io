@@ -41,6 +41,7 @@
 
         // Animate the scroll to top
         $('.go-top').click(function(event) {
+            $(this).blur();
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: 0
