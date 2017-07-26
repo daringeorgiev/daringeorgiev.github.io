@@ -82,10 +82,17 @@
     }
 
     // Add lazy loading to the carousel
+    var cHeight = 0;
     $('#carousel-photoshop').on('slide.bs.carousel', function (e) {
         var $nextImage = $(e.relatedTarget).find('img');
 
         $activeItem = $('.active.item', this);
+
+        // prevents the slide decrease in height
+        if (cHeight == 0) {
+            cHeight = $(this).height();
+            $activeItem.next('.item').height(cHeight);
+        }
 
         // prevents the loaded image if it is already loaded
         var src = $nextImage.data('lazy-load-src');
