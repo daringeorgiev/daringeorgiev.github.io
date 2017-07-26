@@ -80,4 +80,20 @@
                 console.log("Service Worker Registered");
             });
     }
+
+    // Add lazy loading to the carousel
+    $('#carousel-photoshop').on('slide.bs.carousel', function (e) {
+        var $nextImage = $(e.relatedTarget).find('img');
+
+        $activeItem = $('.active.item', this);
+
+        // prevents the loaded image if it is already loaded
+        var src = $nextImage.data('lazy-load-src');
+
+        if (typeof src !== "undefined" && src != "") {
+            $nextImage.attr('src', src)
+            $nextImage.data('lazy-load-src', '');
+        }
+    });
+
 })(window, document);
