@@ -24,11 +24,19 @@
     <meta name="theme-color" content="#2780E3">
     <link rel="icon" sizes="192x192" href="./imgs/touch/icon-192x192.png">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    
     <link rel="manifest" href="./manifest.json">
+
+    <!--Inline critical CSS  -->
+    <style>
+        .header__profile-pic {
+            margin-top: 120px;
+            width: 120px;
+        }
+
+        .skills__img {
+            height: 2em;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="0">
@@ -414,6 +422,12 @@
             <br>
         </small>
     </footer>
+
+    <!-- Defer loading of the non-critical CSS -->
+    <noscript id="deferred-styles">
+        <link rel="stylesheet" href="css/styles.css">  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </noscript>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
