@@ -14,7 +14,7 @@ gulp.task('scripts', function () {
     return gulp.src(paths.scripts)
         .pipe(uglify())
         .pipe(rename({
-            suffix: '.min'
+            suffix: '-min'
         }))
         .pipe(gulp.dest(function (file) {
             return file.base;

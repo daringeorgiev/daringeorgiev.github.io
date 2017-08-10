@@ -75,7 +75,7 @@
     // Add Service Worker
     if ('serviceWorker' in window.navigator) {
         window.navigator.serviceWorker
-            .register('/serviceWorker.min.js')
+            .register('/serviceWorker-min.js')
             .then(function() {
                 console.log("Service Worker Registered");
             });
