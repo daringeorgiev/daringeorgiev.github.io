@@ -1,0 +1,29 @@
+{
+  "name": "darin_georgiev",
+  "version": "1.0.0",
+  "description": "Darin Georgiev personal page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daringeorgiev/daringeorgiev.github.io.git"
+  },
+  "keywords": [
+    "Darin",
+    "Georgiev"
+  ],
+  "author": "georgiev.darin@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daringeorgiev/daringeorgiev.github.io/issues"
+  },
+  "homepage": "https://github.com/daringeorgiev/daringeorgiev.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}
