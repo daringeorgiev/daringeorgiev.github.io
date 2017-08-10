@@ -1,7 +1,7 @@
 // Need to use the polyfill because the Cache API is not yet 
 // fully supported in all browsers.
 
-importScripts('/js/serviceworker-cache-polyfill.js');
+importScripts('/js/serviceworker-cache-polyfill-min.js');
 
 self.addEventListener('install', function(e) {
     e.waitUntil(
@@ -10,7 +10,7 @@ self.addEventListener('install', function(e) {
                 '/',
                 '/index.html',
                 '/css/styles.css',
-                '/js/scripts.js',
+                '/js/scripts-min.js',
                 '/imgs/profile.jpg'
             ]);
         })
