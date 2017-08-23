@@ -4,6 +4,7 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var autoprefixer  = require('gulp-autoprefixer');
+var critical = require('critical').stream;
 
 var paths = {
     scripts: ['js/googleAnalytics.js', 'js/scripts.js', 'js/serviceworker-cache-polyfill.js'],
@@ -44,4 +45,19 @@ gulp.task('css', function () {
         .pipe(gulp.dest(function (file) {
             return file.base;
         }))
+});
+
+gulp.task('critical', function () {
+    return gulp.src('index.html')
+        .pipe(critical({
+            base: 'dist/',
+            inline: true,
+            css: ['css/styles-min.css'],
+            ignore: ['@font-face'],
+            minify: true
+        }))
+        .on('error', function (err) {
+            console.log(err.message)
+        })
+        .pipe(gulp.dest('dist'));
 });
