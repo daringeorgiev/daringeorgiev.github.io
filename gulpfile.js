@@ -31,6 +31,14 @@ gulp.task('scripts', function () {
 
 gulp.task('css', function () {
     return gulp.src(paths.css)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(gulp.dest(function (file) {
+            return file.base;
+        }))
+        // compressed version
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
