@@ -5365,7 +5365,7 @@ main p a {
           animation: bounce 1s both; }
 
 .navbar__link.active::after {
-  border-bottom: 0.5rem solid #2780E3;
+  border-bottom: 0.2rem solid #2780E3;
   bottom: 0;
   content: '';
   left: 0;
@@ -5373,7 +5373,7 @@ main p a {
   width: 100%; }
 
 .navbar__link:hover::after {
-  border-bottom: 0.5rem solid #165ba8;
+  border-bottom: 0.2rem solid #165ba8;
   bottom: 0;
   content: '';
   left: 0;

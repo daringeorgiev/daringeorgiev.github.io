@@ -44,7 +44,7 @@ main p a {
 }
 
 @mixin active-style ($color) {
-  border-bottom: .5rem solid $color;
+  border-bottom: .2rem solid $color;
   bottom: 0;
   content: '';
   left: 0;
