@@ -32,7 +32,8 @@ main p a {
 }
 
 .navbar {
-  background: rgba(4, 6, 6, .3);
+  background: rgba(4, 6, 6, .5);
+  border: 0;
   font-weight: 400;
   margin-bottom: 0;
   transition: background 2s;
@@ -97,7 +98,7 @@ h1 i {
 }
 
 .header {
-  background: $navbar-default-bg url('../imgs/cover.jpg') no-repeat center center fixed;
+  background: $navbar-default-bg url('../imgs/cover.svg') no-repeat center center;
   background-size: cover;
   color: $navbar-default-color;
   font-family: 'Open Sans', sans-serif;

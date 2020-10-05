@@ -5327,7 +5327,8 @@ main p a {
     text-decoration: none; }
 
 .navbar {
-  background: rgba(4, 6, 6, 0.3);
+  background: rgba(4, 6, 6, 0.5);
+  border: 0;
   font-weight: 400;
   margin-bottom: 0;
   -webkit-transition: background 2s;
@@ -5383,7 +5384,7 @@ h1 i {
     margin: 1em; }
 
 .header {
-  background: #010101 url("../imgs/cover.jpg") no-repeat center center fixed;
+  background: #010101 url("../imgs/cover.svg") no-repeat center center;
   background-size: cover;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
