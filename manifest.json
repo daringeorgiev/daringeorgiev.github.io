@@ -23,5 +23,10 @@
     "src": "./imgs/touch/icon-192x192.png",
     "type": "image/png",
     "sizes": "192x192"
+  }, {
+    "src": "./imgs/touch/icon-192x192.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "maskable"
   }]
 }
