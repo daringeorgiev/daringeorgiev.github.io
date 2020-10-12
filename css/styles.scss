@@ -121,10 +121,14 @@ h1 i {
 }
 
 .footer {
-  background: $navbar-default-bg;
-  color: $gray-light;
-  margin-top: 4rem;
-  padding: 3rem;
+  border-top: .2rem solid $gray-lighter;
+  color: $gray-dark;
+  margin-top: 10rem;
+  padding: 4rem;
+
+  p a {
+    color: darken($link-color, 5%)
+  }
 }
 
 .go-top {

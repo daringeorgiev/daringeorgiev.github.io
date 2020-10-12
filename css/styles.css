@@ -5403,10 +5403,12 @@ h1 i {
   width: 120px; }
 
 .footer {
-  background: #010101;
-  color: #999999;
-  margin-top: 4rem;
-  padding: 3rem; }
+  border-top: 0.2rem solid #e6e6e6;
+  color: #333333;
+  margin-top: 10rem;
+  padding: 4rem; }
+  .footer p a {
+    color: #1c73d5; }
 
 .go-top {
   color: rgba(35, 68, 101, 0.5);
