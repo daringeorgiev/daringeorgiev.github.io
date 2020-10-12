@@ -5396,6 +5396,8 @@ h1 i {
 
 .header__profile-pic {
   margin-top: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 120px; }
 
 .footer {
