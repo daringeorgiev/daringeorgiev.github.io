@@ -5335,9 +5335,11 @@ main p a {
   transition: background 2s;
   z-index: 9999; }
 
-.navbar-brand:hover {
-  -webkit-animation: bounce 1s both;
-          animation: bounce 1s both; }
+.navbar-brand {
+  padding-right: 0; }
+  .navbar-brand:hover {
+    -webkit-animation: bounce 1s both;
+            animation: bounce 1s both; }
 
 .navbar__link.active::after {
   border-bottom: 0.2rem solid #2780E3;

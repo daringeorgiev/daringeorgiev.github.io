@@ -40,8 +40,12 @@ main p a {
   z-index: 9999;
 }
 
-.navbar-brand:hover {
-  animation: bounce 1s both;
+.navbar-brand {
+  padding-right: 0;
+
+  &:hover {
+    animation: bounce 1s both;
+  }
 }
 
 @mixin active-style ($color) {
