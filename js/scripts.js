@@ -83,16 +83,6 @@
         });
     });
 
-    // Defer images loading
-    window.onload = function() {
-        var imgDefer = document.getElementsByTagName('img');
-        for (var i = 0; i < imgDefer.length; i++) {
-            if (imgDefer[i].getAttribute('data-src')) {
-                imgDefer[i].setAttribute('src', imgDefer[i].getAttribute('data-src'));
-            }
-        }
-    }
-
     // Add Service Worker
     if ('serviceWorker' in window.navigator) {
         window.navigator.serviceWorker
@@ -102,26 +92,5 @@
             });
     }
 
-    // Add lazy loading to the carousel
-    var cHeight = 0;
-    $('#carousel-photoshop').on('slide.bs.carousel', function (e) {
-        var $nextImage = $(e.relatedTarget).find('img');
-
-        $activeItem = $('.active.carousel-item', this);
-
-        // prevents the slide decrease in height
-        if (cHeight == 0) {
-            cHeight = $(this).height();
-            $activeItem.next('.carousel-item').height(cHeight);
-        }
-
-        // prevents the loaded image if it is already loaded
-        var src = $nextImage.data('lazy-load-src');
-
-        if (typeof src !== "undefined" && src != "") {
-            $nextImage.attr('src', src)
-            $nextImage.data('lazy-load-src', '');
-        }
-    });
 
 })(window, document);

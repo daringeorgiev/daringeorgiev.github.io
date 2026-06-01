@@ -105,6 +105,10 @@ h1 i {
   padding-left: 2rem;
 }
 
+.carousel-item.active {
+  display: block;
+}
+
 .carousel-item img {
   display: block;
   width: 100%;

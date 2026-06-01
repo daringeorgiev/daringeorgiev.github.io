@@ -3,9 +3,11 @@
 
 importScripts('/js/serviceworker-cache-polyfill-min.js');
 
+var CACHE_NAME = 'darinGeorgiev-v2';
+
 self.addEventListener('install', function(e) {
     e.waitUntil(
-        caches.open('darinGeorgiev').then(function(cache) {
+        caches.open(CACHE_NAME).then(function(cache) {
             return cache.addAll([
                 '/',
                 '/index.html',
@@ -17,6 +19,17 @@ self.addEventListener('install', function(e) {
     );
 });
 
+self.addEventListener('activate', function(e) {
+    e.waitUntil(
+        caches.keys().then(function(keyList) {
+            return Promise.all(keyList.map(function(key) {
+                if (key !== CACHE_NAME) {
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+});
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(
