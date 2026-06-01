@@ -3,3 +3,4 @@ node_modules
 .sass-cache
 /css/styles.css.map
 /maps
+/dist

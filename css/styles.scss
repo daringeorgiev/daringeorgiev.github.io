@@ -1,13 +1,27 @@
-@import 'variablesCosmo';
-@import 'bootstrap-custom';
-@import 'bootswatchCosmo';
-@import 'bounce';
-@import 'football';
-@import 'snowboarding';
-@import 'formulaOne';
+@use 'sass:color';
+@use 'bounce' as *;
+@use 'football' as *;
+@use 'snowboarding' as *;
+@use 'formulaOne' as *;
 
-body {
-  position: relative;
+$primary:          #2780E3;
+$link-color:       $primary;
+$link-hover-color: #1560b3;
+$gray-dark:        #373a3c;
+$gray-lighter:     #eeeeee;
+
+@mixin active-style($color) {
+  border-bottom: .2rem solid $color;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin sport-animation($style, $duration) {
+  animation: $style $duration infinite;
+  position: absolute;
 }
 
 section {
@@ -17,10 +31,11 @@ section {
 main p a {
   border-bottom: 1px solid $link-color;
   color: $gray-dark;
+  text-decoration: none;
   transition: background 1s, border 1s, color 1s;
 
   &:hover {
-    background-color: lighten($link-color, 40%);
+    background-color: color.scale($link-color, $lightness: 83%);
     border-color: $link-hover-color;
     border-radius: 3px;
     text-decoration: none;
@@ -31,11 +46,15 @@ main p a {
   }
 }
 
+// Navbar
 .navbar {
+  --bs-navbar-color: rgba(255, 255, 255, 0.85);
+  --bs-navbar-hover-color: #fff;
+  --bs-navbar-active-color: #fff;
+  --bs-navbar-brand-color: #fff;
+  --bs-navbar-brand-hover-color: #fff;
   background: rgba(4, 6, 6, .5);
-  border: 0;
   font-weight: 400;
-  margin-bottom: 0;
   transition: background 2s;
   z-index: 9999;
 }
@@ -48,44 +67,47 @@ main p a {
   }
 }
 
-@mixin active-style ($color) {
-  border-bottom: .2rem solid $color;
-  bottom: 0;
-  content: '';
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
+.navbar__link {
+  position: relative;
 
-.navbar__link.active::after {
-  @include active-style($brand-primary);
-}
+  .nav-link.active::after {
+    @include active-style($primary);
+  }
 
-.navbar__link:hover::after {
-  @include active-style($link-hover-color);
-}
-
-.affix {
-  background: rgba(4, 6, 6, .9);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-
-  .container-fluid {
-    position: relative;
+  &:hover::after {
+    @include active-style($link-hover-color);
   }
 }
 
+.navbar--scrolled {
+  background: rgba(4, 6, 6, .9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.page-header {
+  border-bottom: 1px solid $gray-lighter;
+  margin: 40px 0 20px;
+  padding-bottom: 9px;
+}
+
 h1 i {
-  color: $brand-primary;
+  color: $primary;
 }
 
 .projects__description {
-  border-bottom: .2rem solid $brand-primary;
-  border-left: .3rem solid $brand-primary;
+  border-bottom: .2rem solid $primary;
+  border-left: .3rem solid $primary;
   margin-bottom: 40px;
   padding-left: 2rem;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
 }
 
 .skills__img {
@@ -102,12 +124,18 @@ h1 i {
 }
 
 .header {
-  background: $navbar-default-bg url('../imgs/cover.svg') no-repeat center center;
+  background: #1a1a1a url('../imgs/cover.svg') no-repeat center center;
   background-size: cover;
-  color: $navbar-default-color;
+  color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   height: 500px;
+}
+
+.header__social {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
 }
 
 .header__container {
@@ -115,7 +143,9 @@ h1 i {
 }
 
 .header__profile-pic {
+  height: 120px;
   margin-top: 120px;
+  margin-bottom: 1rem;
   object-fit: cover;
   width: 120px;
 }
@@ -127,16 +157,20 @@ h1 i {
   padding: 4rem;
 
   p a {
-    color: darken($link-color, 5%)
+    color: color.scale($link-color, $lightness: -10%)
   }
 }
 
 .go-top {
-  color: rgba(35,68,101,.5);
+  color: rgba(35, 68, 101, .5);
   bottom: 2rem;
   display: none;
   position: fixed;
   right: 2rem;
+
+  &:hover {
+    color: $primary;
+  }
 }
 
 // Sports animations
@@ -144,11 +178,6 @@ h1 i {
   height: 150px;
   position: relative;
   width: 100%;
-}
-
-@mixin sport-animation ($style, $duration) {
-  animation: $style $duration infinite;
-  position: absolute;
 }
 
 .football-img {

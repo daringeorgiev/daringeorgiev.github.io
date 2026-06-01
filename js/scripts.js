@@ -1,11 +1,6 @@
 (function(window, document) {
     // Add smooth scrolling to scrollspy
     $(document).ready(function() {
-        // Add scrollspy to <body>
-        $('body').scrollspy({
-            target: '.navbar',
-            offset: 50
-        });
 
         // Add smooth scrolling on all links inside the navbar
         $('#navbar a').on('click', function(event) {
@@ -49,9 +44,41 @@
         });
 
         // Close collapsed menu on click
-        $(document).on('click', '.navbar-collapse.in', function(e) {
+        $(document).on('click', '.navbar-collapse.show', function(e) {
             if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
-                $(this).collapse('hide');
+                bootstrap.Collapse.getInstance(this).hide();
+            }
+        });
+
+        // Sticky navbar + manual scroll spy
+        var $navLinks = $('.navbar .nav-link');
+        var sectionIds = ['aboutMe', 'skills', 'projects', 'experience', 'education', 'hobbies'];
+
+        $(window).on('scroll', function() {
+            var scrollTop = $(this).scrollTop();
+
+            // Sticky navbar
+            if (scrollTop > 450) {
+                $('.navbar').addClass('navbar--scrolled');
+            } else {
+                $('.navbar').removeClass('navbar--scrolled');
+            }
+
+            // Highlight nav item for current section
+            var current = null;
+            sectionIds.forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el && scrollTop >= el.offsetTop - 100) {
+                    current = id;
+                }
+            });
+
+            $navLinks.removeClass('active');
+            if (current) {
+                $navLinks.filter('[href="#' + current + '"]').addClass('active');
+                history.replaceState({}, '', '#' + current);
+            } else {
+                history.replaceState({}, '', window.location.pathname);
             }
         });
     });
@@ -65,22 +92,6 @@
             }
         }
     }
-
-    // Update address bar, when scroll to top
-    $(window).scroll(function() {
-        if ($(this).scrollTop() === 0) {
-            window.location.hash = '';
-        }
-    });
-
-    // Update address bar on scroll
-    $(window).on('activate.bs.scrollspy', function(e) {
-        // This check prevent undefined from IE url
-        // TODO: Find a better way of doing that
-        if ($('a[href^="#"]', e.target).attr('href')) {
-            history.replaceState({}, '', $('a[href^="#"]', e.target).attr('href'));
-        }
-    });
 
     // Add Service Worker
     if ('serviceWorker' in window.navigator) {
@@ -96,12 +107,12 @@
     $('#carousel-photoshop').on('slide.bs.carousel', function (e) {
         var $nextImage = $(e.relatedTarget).find('img');
 
-        $activeItem = $('.active.item', this);
+        $activeItem = $('.active.carousel-item', this);
 
         // prevents the slide decrease in height
         if (cHeight == 0) {
             cHeight = $(this).height();
-            $activeItem.next('.item').height(cHeight);
+            $activeItem.next('.carousel-item').height(cHeight);
         }
 
         // prevents the loaded image if it is already loaded

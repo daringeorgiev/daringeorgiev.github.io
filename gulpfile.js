@@ -2,9 +2,9 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var autoprefixer  = require('gulp-autoprefixer');
-var critical = require('critical').stream;
+var critical = require('critical');
 
 var paths = {
     scripts: ['js/googleAnalytics.js', 'js/scripts.js', 'js/serviceworker-cache-polyfill.js'],
@@ -56,16 +56,19 @@ gulp.task('css', function () {
 });
 
 gulp.task('critical', function () {
-    return gulp.src('index.html')
-        .pipe(critical({
-            base: 'dist/',
-            inline: true,
-            css: ['css/styles-min.css'],
-            ignore: ['@font-face'],
-            minify: true
-        }))
-        .on('error', function (err) {
-            console.log(err.message)
-        })
-        .pipe(gulp.dest('dist'));
+    return critical.generate({
+        inline: true,
+        base: './',
+        src: 'index.html',
+        target: 'dist/index.html',
+        css: [
+            'https://bootswatch.com/5/cosmo/bootstrap.min.css',
+            'css/styles-min.css'
+        ],
+        ignore: {
+            atrule: ['font-face', 'charset', 'import']
+        },
+        width: 1300,
+        height: 900
+    });
 });
