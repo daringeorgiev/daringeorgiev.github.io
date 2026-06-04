@@ -12,6 +12,7 @@ Every change to this project must maintain or improve the following:
 - **Performance** — do not regress on lazy loading, critical CSS inlining, minified assets, or WebP image delivery.
 - **Responsiveness** — layout must work correctly at mobile (360px+), tablet (768px+), and desktop (1200px+) widths. Test every change at all three breakpoints.
 - **Browser compatibility** — must work on the last 2 versions of Chrome, Firefox, Safari, and Edge, and on iOS Safari and Chrome for Android.
+- **CSS property order** — properties within each rule in `styles.scss` must be sorted alphabetically.
 
 ## Build
 

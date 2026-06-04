@@ -221,6 +221,16 @@
         </nav>
     </header>
 
+    <div class="print-resume-header" aria-hidden="true">
+        <img src="./imgs/profile.jpg" class="rounded-circle print-resume-header__pic" alt="Darin Georgiev" width="80" height="80">
+        <div class="print-resume-header__info">
+            <p class="print-resume-header__name">Darin Georgiev</p>
+            <p class="print-resume-header__url">daringeorgiev.github.io</p>
+            <p class="print-resume-header__title">Front-End Developer &middot; Sofia, Bulgaria</p>
+            <p class="print-resume-header__contact">georgiev.darin@gmail.com &nbsp;&middot;&nbsp; linkedin.com/in/darin-georgiev &nbsp;&middot;&nbsp; github.com/daringeorgiev</p>
+        </div>
+    </div>
+
     <main class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -267,21 +277,21 @@
                     <div class="projects__description">
                         <p class="lead">A SPA for managing electrical fuse panels — multiple panels, drag-and-drop slot management, and amp ratings. Backed by a REST API built with Spring Boot and PostgreSQL.</p>
                         <span>Technologies:</span>
-                        <p>
+                        <p class="project__tech">
                             <a href="https://react.dev/" target="_blank" rel="noopener">React</a>,
                             <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a>,
                             <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener">Spring Boot</a> and
                             <a href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL</a>
                         </p>
-                        <p>
+                        <p class="project__links">
                             <i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
                             <a href="https://github.com/daringeorgiev/fuse-box-ui" target="_blank" rel="noopener">UI source code</a>
                         </p>
-                        <p>
+                        <p class="project__links">
                             <i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
                             <a href="https://github.com/daringeorgiev/fuse-box-api" target="_blank" rel="noopener">API source code</a>
                         </p>
-                        <p>
+                        <p class="project__links">
                             <i class="fa-solid fa-link fa-lg" aria-hidden="true"></i>
                             <a href="https://fuse-box-8ec50.web.app/" target="_blank" rel="noopener">Link</a>
                         </p>
@@ -291,14 +301,14 @@
                     <div class="projects__description">
                         <p class="lead">A web app for drawing and sharing football tactics — create formations, drag players into position, and share your clipboard with teammates.</p>
                         <span>Technologies:</span>
-                        <p>
+                        <p class="project__tech">
                             <a href="http://angularjs.org/" target="_blank" rel="noopener">AngularJS</a>,
                             <a href="http://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a>,
                             <a href="https://nodejs.org/en/" target="_blank" rel="noopener">NodeJS</a>,
                             <a href="http://expressjs.com/" target="_blank" rel="noopener">Express</a> and
                             <a href="http://mongodb.com/" target="_blank" rel="noopener">MongoDB</a>
                         </p>
-                        <p>
+                        <p class="project__links">
                             <i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
                             <a href="https://github.com/daringeorgiev/Mini-Football-Clipboard/" target="_blank" rel="noopener">
                                 Source code
@@ -310,11 +320,11 @@
                     <div class="projects__description">
                         <p class="lead">An interactive visualizer for common algorithms implemented in JavaScript.</p>
                         <span>Technologies:</span>
-                        <p>
+                        <p class="project__tech">
                             <a href="https://react.dev/" target="_blank" rel="noopener">React</a> and
                             <a href="https://webpack.github.io/" target="_blank" rel="noopener">Webpack</a>
                         </p>
-                        <p>
+                        <p class="project__links">
                             <i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
                             <a href="https://github.com/daringeorgiev/Basic-Algorithms-JS" target="_blank" rel="noopener">
                                 Source code
@@ -506,6 +516,10 @@
         <p>
             <strong>Email:</strong>
             <a href="mailto:georgiev.darin@gmail.com" title="georgiev.darin@gmail.com">georgiev.darin@gmail.com</a>
+        </p>
+        <p>
+            <strong>Print:</strong>
+            <button class="footer__print-btn" onclick="window.print()" aria-label="Print this page as a resume">Print as resume</button>
         </p>
     </footer>
 

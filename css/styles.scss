@@ -172,6 +172,216 @@ h1 i {
   }
 }
 
+// Print styles
+.print-resume-header {
+  display: none;
+}
+
+.footer__print-btn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: $gray-dark;
+  cursor: pointer;
+  font-size: .8rem;
+  padding: .15rem .75rem;
+  transition: border-color .2s, color .2s;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+@media print {
+  @page {
+    margin: 1.5cm 2cm;
+    size: A4;
+  }
+
+  body {
+    color: #000;
+    font-size: 10pt;
+  }
+
+  .header,
+  .navbar,
+  .go-top,
+  .footer {
+    display: none !important;
+  }
+
+  #hobbies {
+    p,
+    .carousel,
+    .sports-img-wrapper,
+    br {
+      display: none !important;
+    }
+
+    h3 {
+      font-size: 10pt;
+      font-weight: normal;
+      margin: 1pt 0;
+      padding-left: 1rem;
+    }
+  }
+
+  .print-resume-header {
+    align-items: center;
+    border-bottom: 2px solid #333;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: .75rem;
+  }
+
+  .print-resume-header__pic {
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 80px;
+    width: 80px;
+  }
+
+  .print-resume-header__info {
+    flex: 1;
+  }
+
+  .print-resume-header__name {
+    font-size: 20pt;
+    font-weight: 600;
+    margin: 0 0 .2rem;
+  }
+
+  .print-resume-header__url,
+  .print-resume-header__contact {
+    color: #555;
+    font-size: 9pt;
+    margin: 0 0 .25rem;
+  }
+
+  .print-resume-header__contact {
+    margin-bottom: 0;
+  }
+
+  .print-resume-header__title {
+    color: #444;
+    font-size: 12pt;
+    margin: 0 0 .2rem;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .col-lg-8,
+  .col-md-10 {
+    flex: none !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  section {
+    padding-top: 4pt;
+  }
+
+  .page-header {
+    border-bottom: 1px solid #ccc;
+    break-after: avoid;
+    font-size: 13pt;
+    margin: 12pt 0 6pt;
+    padding-bottom: 2pt;
+  }
+
+  .page-header i {
+    display: none;
+  }
+
+  h2 {
+    font-size: 11pt;
+    margin-bottom: 2pt;
+  }
+
+  .lead {
+    font-size: 10pt;
+  }
+
+  .skills__img {
+    display: none;
+  }
+
+  .skills__list li {
+    margin: .25em;
+  }
+
+  .projects__description {
+    border: none;
+    margin-bottom: 20pt;
+    padding-left: 0;
+  }
+
+  .projects__description .lead {
+    margin-bottom: 2pt;
+  }
+
+  .projects__description span {
+    font-weight: normal;
+  }
+
+  .project__tech {
+    display: inline;
+    margin: 0;
+  }
+
+  section:not(#aboutMe) .page-header + .lead {
+    display: none !important;
+  }
+
+  .project__links {
+    display: none !important;
+  }
+
+  a {
+    border-bottom: none !important;
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+
+  #experience,
+  #education,
+  #projects {
+    h2 {
+      margin-bottom: 1pt;
+      margin-top: 8pt;
+    }
+
+    p,
+    .lead {
+      margin-bottom: 1pt;
+    }
+
+    ul {
+      margin-bottom: 4pt;
+      margin-top: 1pt;
+    }
+
+    li {
+      margin-bottom: 1pt;
+    }
+  }
+
+  #experience {
+    break-before: page;
+  }
+
+}
+
 // Sports animations
 .sports-img-wrapper {
   height: 150px;

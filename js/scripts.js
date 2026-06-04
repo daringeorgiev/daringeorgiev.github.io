@@ -83,6 +83,11 @@
         });
     });
 
+    // Restore clean URL for print header/footer
+    window.addEventListener('beforeprint', function() {
+        history.replaceState({}, '', window.location.pathname);
+    });
+
     // Add Service Worker
     if ('serviceWorker' in window.navigator) {
         window.navigator.serviceWorker
