@@ -5,6 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass')(require('sass'));
 var autoprefixer  = require('gulp-autoprefixer');
 var critical = require('critical');
+var fs = require('fs');
 
 var paths = {
     scripts: ['js/googleAnalytics.js', 'js/scripts.js', 'js/serviceworker-cache-polyfill.js'],
@@ -55,8 +56,8 @@ gulp.task('css', function () {
         }))
 });
 
-gulp.task('critical', function () {
-    return critical.generate({
+gulp.task('critical', async function () {
+    await critical.generate({
         inline: true,
         base: './',
         src: 'index.html',
@@ -71,4 +72,10 @@ gulp.task('critical', function () {
         width: 1300,
         height: 900
     });
+
+    // Font Awesome ships with font-display:block; patch to swap so browsers
+    // show fallback text immediately rather than hiding it during font load.
+    const distPath = 'dist/index.html';
+    const patched = fs.readFileSync(distPath, 'utf8').replace(/font-display:block/g, 'font-display:swap');
+    fs.writeFileSync(distPath, patched);
 });
