@@ -6,14 +6,12 @@
   }
 
   55% {
-    // Do not use calc(100% - 70px), because IE has a problem with it
-    bottom: 70%;
+    bottom: calc(100% - 70px);
   }
 
   100% {
     bottom: 30%;
-    // Do not use calc(100% - 80px), because IE has a problem with it
-    left: 75%;
+    left: calc(100% - 80px);
     transform: scale(.3);
   }
 }

@@ -227,7 +227,10 @@ main p a:hover {
 .navbar-brand {
   padding-right: 0;
 }
-.navbar-brand:hover {
+.navbar-brand span {
+  display: inline-block;
+}
+.navbar-brand:hover span {
   -webkit-animation: bounce 1s both;
           animation: bounce 1s both;
 }

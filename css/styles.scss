@@ -63,7 +63,11 @@ main p a {
 .navbar-brand {
   padding-right: 0;
 
-  &:hover {
+  span {
+    display: inline-block;
+  }
+
+  &:hover span {
     animation: bounce 1s both;
   }
 }
