@@ -94,7 +94,8 @@ main p a {
   padding-bottom: 9px;
 }
 
-h1 i {
+h1 i,
+h2 i {
   color: $primary;
 }
 
@@ -116,7 +117,7 @@ h1 i {
   gap: 1.25rem;
 }
 
-h2.skills__group-label {
+h3.skills__group-label {
   color: $gray-dark;
   font-size: .75rem;
   font-weight: 600;
@@ -242,7 +243,7 @@ h2.skills__group-label {
       display: none !important;
     }
 
-    h3 {
+    h4 {
       font-size: 10pt;
       font-weight: normal;
       margin: 1pt 0;
@@ -326,7 +327,7 @@ h2.skills__group-label {
     display: none;
   }
 
-  h2 {
+  h3 {
     font-size: 11pt;
     margin-bottom: 2pt;
   }
@@ -339,7 +340,7 @@ h2.skills__group-label {
     display: none;
   }
 
-  h2.skills__group-label {
+  h3.skills__group-label {
     font-size: 8pt;
     margin-bottom: 2pt;
   }
@@ -392,7 +393,7 @@ h2.skills__group-label {
   #experience,
   #education,
   #projects {
-    h2 {
+    h3 {
       margin-bottom: 1pt;
       margin-top: 8pt;
     }

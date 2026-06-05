@@ -267,7 +267,8 @@ main p a:hover {
   padding-bottom: 9px;
 }
 
-h1 i {
+h1 i,
+h2 i {
   color: #2780E3;
 }
 
@@ -294,7 +295,7 @@ h1 i {
   gap: 1.25rem;
 }
 
-h2.skills__group-label {
+h3.skills__group-label {
   color: #373a3c;
   font-size: 0.75rem;
   font-weight: 600;
@@ -424,7 +425,7 @@ h2.skills__group-label {
   #hobbies br {
     display: none !important;
   }
-  #hobbies h3 {
+  #hobbies h4 {
     font-size: 10pt;
     font-weight: normal;
     margin: 1pt 0;
@@ -504,7 +505,7 @@ h2.skills__group-label {
   .page-header i {
     display: none;
   }
-  h2 {
+  h3 {
     font-size: 11pt;
     margin-bottom: 2pt;
   }
@@ -514,7 +515,7 @@ h2.skills__group-label {
   .skills__pill-img {
     display: none;
   }
-  h2.skills__group-label {
+  h3.skills__group-label {
     font-size: 8pt;
     margin-bottom: 2pt;
   }
@@ -554,9 +555,9 @@ h2.skills__group-label {
     color: #333 !important;
     text-decoration: none !important;
   }
-  #experience h2,
-  #education h2,
-  #projects h2 {
+  #experience h3,
+  #education h3,
+  #projects h3 {
     margin-bottom: 1pt;
     margin-top: 8pt;
   }
