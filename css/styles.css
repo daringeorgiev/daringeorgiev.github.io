@@ -283,16 +283,52 @@ h1 i {
   width: 100%;
 }
 
-.skills__img {
-  height: 2em;
-  margin-right: 0.5em;
+.skills__groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem;
 }
 
-.skills__list {
-  list-style-type: none;
+h2.skills__group-label {
+  color: #373a3c;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
-.skills__list li {
-  margin: 1em;
+
+.skills__pills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills__pill {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #eeeeee;
+  border-radius: 2rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.9rem;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+}
+
+.skills__pill-img {
+  height: 1.75em;
+  width: auto;
 }
 
 .header {
@@ -475,11 +511,22 @@ h1 i {
   .lead {
     font-size: 10pt;
   }
-  .skills__img {
+  .skills__pill-img {
     display: none;
   }
-  .skills__list li {
-    margin: 0.25em;
+  h2.skills__group-label {
+    font-size: 8pt;
+    margin-bottom: 2pt;
+  }
+  .skills__pill {
+    background: none;
+    border: 1px solid #ccc;
+    font-size: 8pt;
+    padding: 1pt 6pt;
+  }
+  .skills__pills {
+    gap: 3pt;
+    margin-bottom: 4pt;
   }
   .projects__description {
     border: none;

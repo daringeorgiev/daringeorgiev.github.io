@@ -110,17 +110,40 @@ h1 i {
   width: 100%;
 }
 
-.skills__img {
-  height: 2em;
-  margin-right: .5em;
+.skills__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.skills__list {
-  list-style-type: none;
+h2.skills__group-label {
+  color: $gray-dark;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
 
-  li {
-    margin: 1em;
-  }
+.skills__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.skills__pill {
+  align-items: center;
+  background: $gray-lighter;
+  border-radius: 2rem;
+  display: inline-flex;
+  font-size: .9rem;
+  gap: .4rem;
+  padding: .3rem .85rem;
+}
+
+.skills__pill-img {
+  height: 1.75em;
+  width: auto;
 }
 
 .header {
@@ -312,12 +335,25 @@ h1 i {
     font-size: 10pt;
   }
 
-  .skills__img {
+  .skills__pill-img {
     display: none;
   }
 
-  .skills__list li {
-    margin: .25em;
+  h2.skills__group-label {
+    font-size: 8pt;
+    margin-bottom: 2pt;
+  }
+
+  .skills__pill {
+    background: none;
+    border: 1px solid #ccc;
+    font-size: 8pt;
+    padding: 1pt 6pt;
+  }
+
+  .skills__pills {
+    gap: 3pt;
+    margin-bottom: 4pt;
   }
 
   .projects__description {
