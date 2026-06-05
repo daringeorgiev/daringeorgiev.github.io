@@ -3,7 +3,7 @@
 
 importScripts('/js/serviceworker-cache-polyfill-min.js');
 
-var CACHE_NAME = 'darinGeorgiev-v2';
+var CACHE_NAME = 'darinGeorgiev-v3';
 
 self.addEventListener('install', function(e) {
     e.waitUntil(

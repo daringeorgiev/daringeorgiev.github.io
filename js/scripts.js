@@ -1,86 +1,98 @@
 (function(window, document) {
-    // Add smooth scrolling to scrollspy
-    $(document).ready(function() {
 
-        // Add smooth scrolling on all links inside the navbar
-        $('#navbar a').on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
+    function smoothScrollTo(targetY, duration) {
+        var startY = window.scrollY;
+        var distance = targetY - startY;
+        var startTime = null;
+        function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            window.scrollTo(0, startY + distance * ease(progress));
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    // Smooth scroll on navbar link click
+    document.querySelectorAll('#navbar a').forEach(function(link) {
+        link.addEventListener('click', function(event) {
             if (this.hash !== '') {
-                // Prevent default anchor click behavior
                 event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll 
-                // The optional number (800) specifies the number of milliseconds 
-                // it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function() {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-
-        // Show or hide the sticky footer button
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                $('.go-top').fadeIn(500);
-            } else {
-                $('.go-top').fadeOut(300);
-            }
-        });
-
-        // Animate the scroll to top
-        $('.go-top').click(function(event) {
-            $(this).blur();
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: 0
-            }, 800);
-        });
-
-        // Close collapsed menu on click
-        $(document).on('click', '.navbar-collapse.show', function(e) {
-            if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
-                bootstrap.Collapse.getInstance(this).hide();
-            }
-        });
-
-        // Sticky navbar + manual scroll spy
-        var $navLinks = $('.navbar .nav-link');
-        var sectionIds = ['aboutMe', 'skills', 'projects', 'experience', 'education', 'hobbies'];
-
-        $(window).on('scroll', function() {
-            var scrollTop = $(this).scrollTop();
-
-            // Sticky navbar
-            if (scrollTop > 450) {
-                $('.navbar').addClass('navbar--scrolled');
-            } else {
-                $('.navbar').removeClass('navbar--scrolled');
-            }
-
-            // Highlight nav item for current section
-            var current = null;
-            sectionIds.forEach(function(id) {
-                var el = document.getElementById(id);
-                if (el && scrollTop >= el.offsetTop - 100) {
-                    current = id;
+                var target = document.querySelector(this.hash);
+                if (target) {
+                    smoothScrollTo(target.getBoundingClientRect().top + window.scrollY, 800);
+                    history.replaceState({}, '', this.hash);
                 }
-            });
-
-            $navLinks.removeClass('active');
-            if (current) {
-                $navLinks.filter('[href="#' + current + '"]').addClass('active');
-                history.replaceState({}, '', '#' + current);
-            } else {
-                history.replaceState({}, '', window.location.pathname);
             }
         });
+    });
+
+    // Show or hide the go-top button
+    var goTop = document.querySelector('.go-top');
+    if (goTop) {
+        goTop.style.transition = 'opacity 0.3s';
+        goTop.style.opacity = '0';
+        goTop.style.pointerEvents = 'none';
+        goTop.addEventListener('click', function(event) {
+            this.blur();
+            event.preventDefault();
+            smoothScrollTo(0, 800);
+        });
+    }
+
+    // Close collapsed navbar on nav link click
+    document.addEventListener('click', function(e) {
+        var collapse = document.querySelector('.navbar-collapse.show');
+        if (collapse && e.target.matches('a') && e.target.className !== 'dropdown-toggle') {
+            bootstrap.Collapse.getInstance(collapse).hide();
+        }
+    });
+
+    // Sticky navbar + manual scroll spy
+    var navbar = document.querySelector('.navbar');
+    var navbarThreshold = navbar.getBoundingClientRect().top + window.scrollY;
+    var navLinks = document.querySelectorAll('.navbar .nav-link');
+    var sectionIds = ['aboutMe', 'skills', 'projects', 'experience', 'education', 'hobbies'];
+
+    window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY;
+
+        // Go-top button visibility
+        if (goTop) {
+            if (scrollTop > 200) {
+                goTop.style.opacity = '1';
+                goTop.style.pointerEvents = 'auto';
+            } else {
+                goTop.style.opacity = '0';
+                goTop.style.pointerEvents = 'none';
+            }
+        }
+
+        // Sticky navbar
+        if (scrollTop > navbarThreshold) {
+            navbar.classList.add('navbar--scrolled');
+        } else {
+            navbar.classList.remove('navbar--scrolled');
+        }
+
+        // Highlight nav item for current section
+        var current = null;
+        sectionIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && scrollTop >= el.offsetTop - 100) {
+                current = id;
+            }
+        });
+
+        navLinks.forEach(function(link) { link.classList.remove('active'); });
+        if (current) {
+            var activeLink = document.querySelector('.navbar .nav-link[href="#' + current + '"]');
+            if (activeLink) activeLink.classList.add('active');
+            history.replaceState({}, '', '#' + current);
+        } else {
+            history.replaceState({}, '', window.location.pathname);
+        }
     });
 
     // Restore clean URL for print header/footer
@@ -88,7 +100,7 @@
         history.replaceState({}, '', window.location.pathname);
     });
 
-    // Add Service Worker
+    // Register Service Worker
     if ('serviceWorker' in window.navigator) {
         window.navigator.serviceWorker
             .register('/serviceWorker.js')
@@ -96,6 +108,5 @@
                 console.log("Service Worker Registered");
             });
     }
-
 
 })(window, document);
