@@ -4,12 +4,17 @@
         var startY = window.scrollY;
         var distance = targetY - startY;
         var startTime = null;
-        function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+        function ease(t) { return 1 - Math.pow(1 - t, 3); }
+        document.documentElement.style.scrollBehavior = 'auto';
         function step(timestamp) {
             if (!startTime) startTime = timestamp;
             var progress = Math.min((timestamp - startTime) / duration, 1);
             window.scrollTo(0, startY + distance * ease(progress));
-            if (progress < 1) requestAnimationFrame(step);
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                document.documentElement.style.scrollBehavior = '';
+            }
         }
         requestAnimationFrame(step);
     }
@@ -53,7 +58,7 @@
     var navbar = document.querySelector('.navbar');
     var navbarThreshold = navbar.getBoundingClientRect().top + window.scrollY;
     var navLinks = document.querySelectorAll('.navbar .nav-link');
-    var sectionIds = ['aboutMe', 'skills', 'projects', 'experience', 'education', 'hobbies'];
+    var sectionIds = ['aboutMe', 'skills', 'experience', 'projects', 'education', 'hobbies'];
 
     window.addEventListener('scroll', function() {
         var scrollTop = window.scrollY;
